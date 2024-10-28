@@ -4,14 +4,14 @@ export declare class UserController {
     private readonly userService;
     constructor(userService: UserService);
     getAll(): Promise<{
-        phone: string;
-        password: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         email: string;
+        password: string;
         name: string;
         avatarPath: string;
+        phone: string;
         favorites: {
             id: string;
             createdAt: Date;
@@ -43,14 +43,14 @@ export declare class UserController {
         };
     }[]>;
     getProfile(id: string): Promise<{
-        phone: string;
-        password: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         email: string;
+        password: string;
         name: string;
         avatarPath: string;
+        phone: string;
         favorites: {
             id: string;
             createdAt: Date;
