@@ -1,0 +1,264 @@
+import { ProductService } from './product.service';
+import { ProductDto } from './dto/product.dto';
+export declare class ProductController {
+    private readonly productService;
+    constructor(productService: ProductService);
+    getAll(searchTerm?: string): Promise<{
+        user: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            email: string | null;
+            password: string;
+            name: string | null;
+            avatarPath: string;
+            phone: string;
+        };
+        category: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            name: string;
+            slug: string;
+            image: string;
+            sort: number;
+        };
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        _count: {
+            category: number;
+            user: number;
+            orderItems: number;
+        };
+        description: string;
+        volume: string;
+        unit: string;
+        image: string;
+        categoryId: string;
+        minportion: number;
+        price: number;
+        sort: number;
+        show: number;
+        recommended: number;
+        slug: string;
+        userId: string;
+        orderItems: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            quantity: number;
+            price: number;
+            orderId: string | null;
+            productId: string;
+        }[];
+    }[]>;
+    getRecommended(): Promise<{
+        user: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            email: string | null;
+            password: string;
+            name: string | null;
+            avatarPath: string;
+            phone: string;
+        };
+        category: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            name: string;
+            slug: string;
+            image: string;
+            sort: number;
+        };
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        _count: {
+            category: number;
+            user: number;
+            orderItems: number;
+        };
+        description: string;
+        volume: string;
+        unit: string;
+        image: string;
+        categoryId: string;
+        minportion: number;
+        price: number;
+        sort: number;
+        show: number;
+        recommended: number;
+        slug: string;
+        userId: string;
+        orderItems: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            quantity: number;
+            price: number;
+            orderId: string | null;
+            productId: string;
+        }[];
+    }[]>;
+    getProductBySlug(slug: string): Promise<{
+        user: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            email: string | null;
+            password: string;
+            name: string | null;
+            avatarPath: string;
+            phone: string;
+        };
+        category: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            name: string;
+            slug: string;
+            image: string;
+            sort: number;
+        };
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        _count: {
+            category: number;
+            user: number;
+            orderItems: number;
+        };
+        description: string;
+        volume: string;
+        unit: string;
+        image: string;
+        categoryId: string;
+        minportion: number;
+        price: number;
+        sort: number;
+        show: number;
+        recommended: number;
+        slug: string;
+        userId: string;
+        orderItems: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            quantity: number;
+            price: number;
+            orderId: string | null;
+            productId: string;
+        }[];
+    }>;
+    getProductsByCategory(categorySlug: string): Promise<{
+        user: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            email: string | null;
+            password: string;
+            name: string | null;
+            avatarPath: string;
+            phone: string;
+        };
+        category: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            name: string;
+            slug: string;
+            image: string;
+            sort: number;
+        };
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        _count: {
+            category: number;
+            user: number;
+            orderItems: number;
+        };
+        description: string;
+        volume: string;
+        unit: string;
+        image: string;
+        categoryId: string;
+        minportion: number;
+        price: number;
+        sort: number;
+        show: number;
+        recommended: number;
+        slug: string;
+        userId: string;
+        orderItems: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            quantity: number;
+            price: number;
+            orderId: string | null;
+            productId: string;
+        }[];
+    }[]>;
+    create(): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        slug: string;
+        description: string | null;
+        volume: string;
+        unit: string;
+        minportion: number;
+        price: number;
+        image: string;
+        sort: number;
+        show: number;
+        recommended: number;
+        categoryId: string | null;
+        userId: string | null;
+    }>;
+    update(id: string, dto: ProductDto): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        slug: string;
+        description: string | null;
+        volume: string;
+        unit: string;
+        minportion: number;
+        price: number;
+        image: string;
+        sort: number;
+        show: number;
+        recommended: number;
+        categoryId: string | null;
+        userId: string | null;
+    }>;
+    delete(id: string): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        slug: string;
+        description: string | null;
+        volume: string;
+        unit: string;
+        minportion: number;
+        price: number;
+        image: string;
+        sort: number;
+        show: number;
+        recommended: number;
+        categoryId: string | null;
+        userId: string | null;
+    }>;
+}
