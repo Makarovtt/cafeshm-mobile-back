@@ -9,32 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderDto = exports.OrderItemDto = void 0;
+exports.CafeDto = void 0;
 const class_validator_1 = require("class-validator");
-class OrderItemDto {
+class CafeDto {
 }
-exports.OrderItemDto = OrderItemDto;
-__decorate([
-    (0, class_validator_1.IsNumber)(),
-    __metadata("design:type", Number)
-], OrderItemDto.prototype, "price", void 0);
+exports.CafeDto = CafeDto;
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], OrderItemDto.prototype, "productId", void 0);
-__decorate([
-    (0, class_validator_1.IsNumber)(),
-    __metadata("design:type", Number)
-], OrderItemDto.prototype, "quantity", void 0);
-class OrderDto {
-}
-exports.OrderDto = OrderDto;
-__decorate([
-    (0, class_validator_1.IsArray)(),
-    __metadata("design:type", Array)
-], OrderDto.prototype, "items", void 0);
+], CafeDto.prototype, "name", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], OrderDto.prototype, "receiving", void 0);
-//# sourceMappingURL=order.dto.js.map
+], CafeDto.prototype, "address", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], CafeDto.prototype, "sort", void 0);
+//# sourceMappingURL=cafe.dto.js.map

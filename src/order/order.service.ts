@@ -51,7 +51,9 @@ export class OrderService {
 			0
 		)
 
-		if (total < 1) {
+		const receiving = dto.receiving
+
+		if (total < 1000) {
 			throw new Error('Сумма заказа должна быть более 1000 рублей')
 		}
 		const order = await this.prisma.order.create({
@@ -60,6 +62,7 @@ export class OrderService {
 					create: dto.items
 				},
 				total,
+				receiving,
 				user: {
 					connect: { id: userId }
 				}

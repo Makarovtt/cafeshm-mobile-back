@@ -4,14 +4,14 @@ export declare class UserController {
     private readonly userService;
     constructor(userService: UserService);
     getAll(): Promise<{
+        phone: string;
+        password: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         email: string;
-        password: string;
         name: string;
         avatarPath: string;
-        phone: string;
         favorites: {
             id: string;
             createdAt: Date;
@@ -35,22 +35,39 @@ export declare class UserController {
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            receiving: string;
+            userId: string | null;
+            addressId: string | null;
+            cafeId: string | null;
+        }[];
+        addresses: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            street: string;
+            home: string;
+            privatehome: string | null;
+            flat: string | null;
+            entrance: string | null;
+            floor: string | null;
+            nameaddress: string | null;
             userId: string | null;
         }[];
         _count: {
             favorites: number;
             orders: number;
+            addresses: number;
         };
     }[]>;
     getProfile(id: string): Promise<{
+        phone: string;
+        password: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         email: string;
-        password: string;
         name: string;
         avatarPath: string;
-        phone: string;
         favorites: {
             id: string;
             createdAt: Date;
@@ -74,11 +91,28 @@ export declare class UserController {
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            receiving: string;
+            userId: string | null;
+            addressId: string | null;
+            cafeId: string | null;
+        }[];
+        addresses: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            street: string;
+            home: string;
+            privatehome: string | null;
+            flat: string | null;
+            entrance: string | null;
+            floor: string | null;
+            nameaddress: string | null;
             userId: string | null;
         }[];
         _count: {
             favorites: number;
             orders: number;
+            addresses: number;
         };
     }>;
     toggleFavorite(id: string, productId: string): Promise<{

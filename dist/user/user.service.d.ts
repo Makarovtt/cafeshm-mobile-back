@@ -35,11 +35,28 @@ export declare class UserService {
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            receiving: string;
+            userId: string | null;
+            addressId: string | null;
+            cafeId: string | null;
+        }[];
+        addresses: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            street: string;
+            home: string;
+            privatehome: string | null;
+            flat: string | null;
+            entrance: string | null;
+            floor: string | null;
+            nameaddress: string | null;
             userId: string | null;
         }[];
         _count: {
             favorites: number;
             orders: number;
+            addresses: number;
         };
     }[]>;
     getById(id: string, selectObject?: Prisma.UserSelect): Promise<{
@@ -74,11 +91,28 @@ export declare class UserService {
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            receiving: string;
+            userId: string | null;
+            addressId: string | null;
+            cafeId: string | null;
+        }[];
+        addresses: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            street: string;
+            home: string;
+            privatehome: string | null;
+            flat: string | null;
+            entrance: string | null;
+            floor: string | null;
+            nameaddress: string | null;
             userId: string | null;
         }[];
         _count: {
             favorites: number;
             orders: number;
+            addresses: number;
         };
     }>;
     toggleFavorite(userId: string, productId: string): Promise<{

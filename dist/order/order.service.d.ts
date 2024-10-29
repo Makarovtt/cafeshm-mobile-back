@@ -7,6 +7,10 @@ export declare class OrderService {
     getAll(): Promise<({
         items: ({
             product: {
+                id: string;
+                createdAt: Date;
+                updatedAt: Date;
+                userId: string;
                 user: {
                     id: string;
                     createdAt: Date;
@@ -17,6 +21,23 @@ export declare class OrderService {
                     avatarPath: string;
                     phone: string;
                 };
+                _count: {
+                    category: number;
+                    user: number;
+                    orderItems: number;
+                };
+                name: string;
+                slug: string;
+                description: string;
+                volume: string;
+                unit: string;
+                minportion: number;
+                price: number;
+                image: string;
+                sort: number;
+                show: number;
+                recommended: number;
+                categoryId: string;
                 category: {
                     id: string;
                     createdAt: Date;
@@ -26,27 +47,6 @@ export declare class OrderService {
                     image: string;
                     sort: number;
                 };
-                id: string;
-                createdAt: Date;
-                updatedAt: Date;
-                name: string;
-                _count: {
-                    category: number;
-                    user: number;
-                    orderItems: number;
-                };
-                description: string;
-                volume: string;
-                unit: string;
-                image: string;
-                categoryId: string;
-                minportion: number;
-                price: number;
-                sort: number;
-                show: number;
-                recommended: number;
-                slug: string;
-                userId: string;
                 orderItems: {
                     id: string;
                     createdAt: Date;
@@ -71,11 +71,18 @@ export declare class OrderService {
         createdAt: Date;
         updatedAt: Date;
         total: number;
+        receiving: string;
         userId: string | null;
+        addressId: string | null;
+        cafeId: string | null;
     })[]>;
     getByUserId(userId: string): Promise<({
         items: ({
             product: {
+                id: string;
+                createdAt: Date;
+                updatedAt: Date;
+                userId: string;
                 user: {
                     id: string;
                     createdAt: Date;
@@ -86,6 +93,23 @@ export declare class OrderService {
                     avatarPath: string;
                     phone: string;
                 };
+                _count: {
+                    category: number;
+                    user: number;
+                    orderItems: number;
+                };
+                name: string;
+                slug: string;
+                description: string;
+                volume: string;
+                unit: string;
+                minportion: number;
+                price: number;
+                image: string;
+                sort: number;
+                show: number;
+                recommended: number;
+                categoryId: string;
                 category: {
                     id: string;
                     createdAt: Date;
@@ -95,27 +119,6 @@ export declare class OrderService {
                     image: string;
                     sort: number;
                 };
-                id: string;
-                createdAt: Date;
-                updatedAt: Date;
-                name: string;
-                _count: {
-                    category: number;
-                    user: number;
-                    orderItems: number;
-                };
-                description: string;
-                volume: string;
-                unit: string;
-                image: string;
-                categoryId: string;
-                minportion: number;
-                price: number;
-                sort: number;
-                show: number;
-                recommended: number;
-                slug: string;
-                userId: string;
                 orderItems: {
                     id: string;
                     createdAt: Date;
@@ -140,7 +143,10 @@ export declare class OrderService {
         createdAt: Date;
         updatedAt: Date;
         total: number;
+        receiving: string;
         userId: string | null;
+        addressId: string | null;
+        cafeId: string | null;
     })[]>;
     placeOrder(dto: OrderDto, userId: string): Promise<{
         clientSecret: string;

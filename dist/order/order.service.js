@@ -52,7 +52,8 @@ let OrderService = class OrderService {
     }
     async placeOrder(dto, userId) {
         const total = dto.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-        if (total < 1) {
+        const receiving = dto.receiving;
+        if (total < 1000) {
             throw new Error('Сумма заказа должна быть более 1000 рублей');
         }
         const order = await this.prisma.order.create({
@@ -61,6 +62,7 @@ let OrderService = class OrderService {
                     create: dto.items
                 },
                 total,
+                receiving,
                 user: {
                     connect: { id: userId }
                 }

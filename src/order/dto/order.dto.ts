@@ -14,4 +14,7 @@ export class OrderItemDto {
 export class OrderDto {
 	@IsArray()
 	items: OrderItemDto[]
+
+	@IsString()
+	receiving: string
 }

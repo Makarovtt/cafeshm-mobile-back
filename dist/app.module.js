@@ -18,6 +18,7 @@ const category_module_1 = require("./category/category.module");
 const serve_static_1 = require("@nestjs/serve-static");
 const app_root_path_1 = require("app-root-path");
 const order_module_1 = require("./order/order.module");
+const cafe_module_1 = require("./cafe/cafe.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -33,7 +34,8 @@ exports.AppModule = AppModule = __decorate([
             category_module_1.CategoryModule,
             product_module_1.ProductModule,
             user_module_1.UserModule,
-            order_module_1.OrderModule
+            order_module_1.OrderModule,
+            cafe_module_1.CafeModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService]

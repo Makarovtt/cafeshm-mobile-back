@@ -5,4 +5,5 @@ export declare class OrderItemDto {
 }
 export declare class OrderDto {
     items: OrderItemDto[];
+    receiving: string;
 }
