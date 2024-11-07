@@ -1,5 +1,5 @@
 import { UserService } from './user.service';
-import { EmailDto, NameDto, PhoneDto } from './dto/user.dto';
+import { BonusesDto, EmailDto, NameDto, PhoneDto } from './dto/user.dto';
 export declare class UserController {
     private readonly userService;
     constructor(userService: UserService);
@@ -12,6 +12,7 @@ export declare class UserController {
         email: string;
         name: string;
         avatarPath: string;
+        bonuses: number;
         favorites: {
             id: string;
             createdAt: Date;
@@ -35,7 +36,9 @@ export declare class UserController {
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            isBonus: boolean | null;
             receiving: string;
+            timeready: string;
             userId: string | null;
             addressId: string | null;
             cafeId: string | null;
@@ -46,7 +49,7 @@ export declare class UserController {
             updatedAt: Date;
             street: string;
             home: string;
-            privatehome: string | null;
+            privatehome: boolean | null;
             flat: string | null;
             entrance: string | null;
             floor: string | null;
@@ -68,6 +71,7 @@ export declare class UserController {
         email: string;
         name: string;
         avatarPath: string;
+        bonuses: number;
         favorites: {
             id: string;
             createdAt: Date;
@@ -91,7 +95,9 @@ export declare class UserController {
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            isBonus: boolean | null;
             receiving: string;
+            timeready: string;
             userId: string | null;
             addressId: string | null;
             cafeId: string | null;
@@ -102,7 +108,7 @@ export declare class UserController {
             updatedAt: Date;
             street: string;
             home: string;
-            privatehome: string | null;
+            privatehome: boolean | null;
             flat: string | null;
             entrance: string | null;
             floor: string | null;
@@ -127,6 +133,7 @@ export declare class UserController {
         name: string | null;
         avatarPath: string;
         phone: string;
+        bonuses: number;
     }>;
     updatePhone(id: string, dto: PhoneDto): Promise<{
         id: string;
@@ -137,6 +144,7 @@ export declare class UserController {
         name: string | null;
         avatarPath: string;
         phone: string;
+        bonuses: number;
     }>;
     updateEmail(id: string, dto: EmailDto): Promise<{
         id: string;
@@ -147,6 +155,18 @@ export declare class UserController {
         name: string | null;
         avatarPath: string;
         phone: string;
+        bonuses: number;
+    }>;
+    updateBonuses(id: string, dto: BonusesDto): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        password: string;
+        name: string | null;
+        avatarPath: string;
+        phone: string;
+        bonuses: number;
     }>;
     delete(id: string): Promise<{
         id: string;
@@ -157,5 +177,6 @@ export declare class UserController {
         name: string | null;
         avatarPath: string;
         phone: string;
+        bonuses: number;
     }>;
 }

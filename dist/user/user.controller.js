@@ -40,6 +40,9 @@ let UserController = class UserController {
     async updateEmail(id, dto) {
         return this.userService.updateEmail(id, dto.email);
     }
+    async updateBonuses(id, dto) {
+        return this.userService.updateBonuses(id, dto.bonuses);
+    }
     async delete(id) {
         return this.userService.delete(id);
     }
@@ -102,6 +105,17 @@ __decorate([
     __metadata("design:paramtypes", [String, user_dto_1.EmailDto]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "updateEmail", null);
+__decorate([
+    (0, common_1.UsePipes)(new common_1.ValidationPipe()),
+    (0, common_1.HttpCode)(200),
+    (0, common_1.Put)('profile/bonuses/:id'),
+    (0, auth_decorator_1.Auth)(),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, user_dto_1.BonusesDto]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "updateBonuses", null);
 __decorate([
     (0, common_1.HttpCode)(200),
     (0, common_1.Delete)(':id'),

@@ -4,70 +4,76 @@ export declare class CafeController {
     private readonly cafeService;
     constructor(cafeService: CafeService);
     getAll(): Promise<{
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
-        name: string;
-        slug: string;
-        address: string;
-        sort: number;
         order: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            isBonus: boolean | null;
             receiving: string;
+            timeready: string;
             userId: string | null;
             addressId: string | null;
             cafeId: string | null;
         }[];
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
         _count: {
             order: number;
         };
+        sort: number;
+        slug: string;
+        address: string;
     }[]>;
     getBySlug(slug: string): Promise<{
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
-        name: string;
-        slug: string;
-        address: string;
-        sort: number;
         order: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            isBonus: boolean | null;
             receiving: string;
+            timeready: string;
             userId: string | null;
             addressId: string | null;
             cafeId: string | null;
         }[];
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
         _count: {
             order: number;
         };
+        sort: number;
+        slug: string;
+        address: string;
     }>;
     getById(id: string): Promise<{
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
-        name: string;
-        slug: string;
-        address: string;
-        sort: number;
         order: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            isBonus: boolean | null;
             receiving: string;
+            timeready: string;
             userId: string | null;
             addressId: string | null;
             cafeId: string | null;
         }[];
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
         _count: {
             order: number;
         };
+        sort: number;
+        slug: string;
+        address: string;
     }>;
     create(): Promise<{
         id: string;

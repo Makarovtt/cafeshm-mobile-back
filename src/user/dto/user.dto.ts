@@ -1,4 +1,4 @@
-import { IsEmail, IsString, MinLength } from 'class-validator'
+import { IsEmail, IsNumber, IsString, MinLength } from 'class-validator'
 
 export class UserDto {
 	@IsEmail()
@@ -15,6 +15,9 @@ export class UserDto {
 
 	@IsString()
 	phone: string
+
+	@IsString()
+	bonuses: number
 }
 
 export class NameDto {
@@ -30,4 +33,9 @@ export class EmailDto {
 export class PhoneDto {
 	@IsString()
 	phone: string
+}
+
+export class BonusesDto {
+	@IsNumber()
+	bonuses: number
 }

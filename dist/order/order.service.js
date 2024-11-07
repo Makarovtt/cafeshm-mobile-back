@@ -14,6 +14,8 @@ const common_1 = require("@nestjs/common");
 const prisma_service_1 = require("../prisma.service");
 const return_product_object_1 = require("../product/return-product.object");
 const stripe_1 = require("stripe");
+const console_1 = require("console");
+const rxjs_1 = require("rxjs");
 let OrderService = class OrderService {
     constructor(prisma) {
         this.prisma = prisma;
@@ -51,33 +53,62 @@ let OrderService = class OrderService {
         });
     }
     async placeOrder(dto, userId) {
-        const total = dto.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        const total = dto.total;
+        const isBonus = dto.isBonus;
         const receiving = dto.receiving;
-        if (total < 1000) {
-            throw new Error('Сумма заказа должна быть более 1000 рублей');
+        const totalBonus = dto.totalBonus;
+        let timeready = '';
+        if (dto.timeready.value === 'now') {
+            timeready = dto.timeready.value;
         }
-        const order = await this.prisma.order.create({
-            data: {
-                items: {
-                    create: dto.items
-                },
-                total,
-                receiving,
-                user: {
-                    connect: { id: userId }
+        else {
+            timeready = dto.timeready.day + ' ' + dto.timeready.time;
+        }
+        const order = await this.prisma.$transaction([
+            this.prisma.order.create({
+                data: {
+                    items: {
+                        create: dto.items
+                    },
+                    total,
+                    isBonus,
+                    receiving,
+                    timeready,
+                    user: {
+                        connect: { id: userId }
+                    },
+                    addressCafe: {
+                        connect: { id: dto.cafeId }
+                    }
                 }
-            }
-        });
-        const totalInCents = Math.round(total * 100);
-        const paymentIntent = await this.stripe.paymentIntents.create({
-            amount: totalInCents,
-            currency: 'usd',
-            automatic_payment_methods: {
-                enabled: true
-            },
-            description: `Order by userId ${order.userId}`
-        });
-        return { clientSecret: paymentIntent.client_secret };
+            }),
+            this.prisma.adresses.create({
+                data: {
+                    street: dto.userInfo.street,
+                    home: dto.userInfo.home,
+                    privatehome: dto.userInfo.privatehome,
+                    flat: dto.userInfo.flat,
+                    entrance: dto.userInfo.entrance,
+                    floor: dto.userInfo.floor,
+                    user: {
+                        connect: { id: userId }
+                    }
+                }
+            }),
+            this.prisma.user.update({
+                where: {
+                    id: userId
+                },
+                data: {
+                    bonuses: isBonus
+                        ? { decrement: totalBonus }
+                        : { increment: dto.addBonus }
+                }
+            })
+        ]);
+        if (order)
+            return 'ok';
+        (0, rxjs_1.throwError)(console_1.error);
     }
 };
 exports.OrderService = OrderService;

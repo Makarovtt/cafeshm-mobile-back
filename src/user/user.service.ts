@@ -102,6 +102,17 @@ export class UserService {
 		})
 	}
 
+	async updateBonuses(id: string, bonuses: number) {
+		return this.prisma.user.update({
+			where: {
+				id
+			},
+			data: {
+				bonuses: bonuses
+			}
+		})
+	}
+
 	async delete(id: string) {
 		return this.prisma.user.delete({
 			where: {

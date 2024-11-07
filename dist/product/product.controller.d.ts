@@ -13,6 +13,7 @@ export declare class ProductController {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;
@@ -64,6 +65,7 @@ export declare class ProductController {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;
@@ -115,6 +117,7 @@ export declare class ProductController {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;
@@ -166,6 +169,7 @@ export declare class ProductController {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;

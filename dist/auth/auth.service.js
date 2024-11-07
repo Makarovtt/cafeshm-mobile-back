@@ -57,6 +57,7 @@ let AuthService = class AuthService {
                 name: '',
                 avatarPath: faker_1.faker.image.avatar(),
                 email: '',
+                bonuses: 500,
                 password: await (0, argon2_1.hash)(dto.password)
             }
         });

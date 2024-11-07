@@ -13,7 +13,7 @@ import {
 import { Auth } from 'src/auth/decorators/auth.decorator'
 import { CurrentUser } from 'src/auth/decorators/user.decorator'
 import { UserService } from './user.service'
-import { EmailDto, NameDto, PhoneDto } from './dto/user.dto'
+import { BonusesDto, EmailDto, NameDto, PhoneDto } from './dto/user.dto'
 
 @Controller('users')
 export class UserController {
@@ -62,6 +62,14 @@ export class UserController {
 	@Auth()
 	async updateEmail(@Param('id') id: string, @Body() dto: EmailDto) {
 		return this.userService.updateEmail(id, dto.email)
+	}
+
+	@UsePipes(new ValidationPipe())
+	@HttpCode(200)
+	@Put('profile/bonuses/:id')
+	@Auth()
+	async updateBonuses(@Param('id') id: string, @Body() dto: BonusesDto) {
+		return this.userService.updateBonuses(id, dto.bonuses)
 	}
 
 	@HttpCode(200)

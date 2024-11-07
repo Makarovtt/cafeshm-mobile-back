@@ -100,6 +100,16 @@ let UserService = class UserService {
             }
         });
     }
+    async updateBonuses(id, bonuses) {
+        return this.prisma.user.update({
+            where: {
+                id
+            },
+            data: {
+                bonuses: bonuses
+            }
+        });
+    }
     async delete(id) {
         return this.prisma.user.delete({
             where: {

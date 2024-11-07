@@ -12,6 +12,7 @@ export declare class UserService {
         email: string;
         name: string;
         avatarPath: string;
+        bonuses: number;
         favorites: {
             id: string;
             createdAt: Date;
@@ -35,7 +36,9 @@ export declare class UserService {
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            isBonus: boolean | null;
             receiving: string;
+            timeready: string;
             userId: string | null;
             addressId: string | null;
             cafeId: string | null;
@@ -46,7 +49,7 @@ export declare class UserService {
             updatedAt: Date;
             street: string;
             home: string;
-            privatehome: string | null;
+            privatehome: boolean | null;
             flat: string | null;
             entrance: string | null;
             floor: string | null;
@@ -68,6 +71,7 @@ export declare class UserService {
         email: string;
         name: string;
         avatarPath: string;
+        bonuses: number;
         favorites: {
             id: string;
             createdAt: Date;
@@ -91,7 +95,9 @@ export declare class UserService {
             createdAt: Date;
             updatedAt: Date;
             total: number;
+            isBonus: boolean | null;
             receiving: string;
+            timeready: string;
             userId: string | null;
             addressId: string | null;
             cafeId: string | null;
@@ -102,7 +108,7 @@ export declare class UserService {
             updatedAt: Date;
             street: string;
             home: string;
-            privatehome: string | null;
+            privatehome: boolean | null;
             flat: string | null;
             entrance: string | null;
             floor: string | null;
@@ -127,6 +133,7 @@ export declare class UserService {
         name: string | null;
         avatarPath: string;
         phone: string;
+        bonuses: number;
     }>;
     updatePhone(id: string, phone: string): Promise<{
         id: string;
@@ -137,6 +144,7 @@ export declare class UserService {
         name: string | null;
         avatarPath: string;
         phone: string;
+        bonuses: number;
     }>;
     updateEmail(id: string, email: string): Promise<{
         id: string;
@@ -147,6 +155,18 @@ export declare class UserService {
         name: string | null;
         avatarPath: string;
         phone: string;
+        bonuses: number;
+    }>;
+    updateBonuses(id: string, bonuses: number): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        password: string;
+        name: string | null;
+        avatarPath: string;
+        phone: string;
+        bonuses: number;
     }>;
     delete(id: string): Promise<{
         id: string;
@@ -157,5 +177,6 @@ export declare class UserService {
         name: string | null;
         avatarPath: string;
         phone: string;
+        bonuses: number;
     }>;
 }
