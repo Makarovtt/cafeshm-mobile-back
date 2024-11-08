@@ -10,6 +10,9 @@ import { ServeStaticModule } from '@nestjs/serve-static'
 import { path } from 'app-root-path'
 import { OrderModule } from './order/order.module'
 import { CafeModule } from './cafe/cafe.module';
+import { ActionsModule } from './actions/actions.module';
+import { TermsModule } from './terms/terms.module';
+import { AboutCafeModule } from './about-cafe/about-cafe.module';
 
 @Module({
 	imports: [
@@ -23,7 +26,10 @@ import { CafeModule } from './cafe/cafe.module';
 		ProductModule,
 		UserModule,
 		OrderModule,
-		CafeModule
+		CafeModule,
+		ActionsModule,
+		TermsModule,
+		AboutCafeModule
 	],
 	controllers: [AppController],
 	providers: [AppService]

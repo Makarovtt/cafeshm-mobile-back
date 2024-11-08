@@ -151,3 +151,54 @@ model AdressesCafe {
 
   @@map("adresses_cafe")
 }
+
+
+model Actions {
+  id  String  @id @default(cuid())
+  createdAt  DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt  @map("updated_at")
+
+  title String @unique
+  slug String @unique
+  image String
+  text String
+
+  @@map("actions")
+}
+
+
+model Rules {
+  id  String  @id @default(cuid())
+  createdAt  DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt  @map("updated_at")
+
+  title String @unique
+  slug String @unique
+  text String
+
+  @@map("rules")
+}
+
+model BonusesPage {
+  id  String  @id @default(cuid())
+  createdAt  DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt  @map("updated_at")
+
+  title String @unique
+  slug String @unique
+  text String
+
+  @@map("bonuses_page")
+}
+
+model AboutCafe {
+  id  String  @id @default(cuid())
+  createdAt  DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt  @map("updated_at")
+
+  title String @unique
+  slug String @unique
+  text String
+
+  @@map("about_cafe")
+}

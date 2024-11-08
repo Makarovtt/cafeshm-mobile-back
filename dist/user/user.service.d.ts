@@ -4,14 +4,14 @@ export declare class UserService {
     private prisma;
     constructor(prisma: PrismaService);
     getAll(): Promise<{
-        phone: string;
-        password: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         email: string;
+        password: string;
         name: string;
         avatarPath: string;
+        phone: string;
         bonuses: number;
         favorites: {
             id: string;
@@ -26,8 +26,8 @@ export declare class UserService {
             price: number;
             image: string;
             sort: number;
-            show: number;
-            recommended: number;
+            show: number | null;
+            recommended: number | null;
             categoryId: string | null;
             userId: string | null;
         }[];
@@ -63,14 +63,14 @@ export declare class UserService {
         };
     }[]>;
     getById(id: string, selectObject?: Prisma.UserSelect): Promise<{
-        phone: string;
-        password: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
         email: string;
+        password: string;
         name: string;
         avatarPath: string;
+        phone: string;
         bonuses: number;
         favorites: {
             id: string;
@@ -85,8 +85,8 @@ export declare class UserService {
             price: number;
             image: string;
             sort: number;
-            show: number;
-            recommended: number;
+            show: number | null;
+            recommended: number | null;
             categoryId: string | null;
             userId: string | null;
         }[];

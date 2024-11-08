@@ -23,8 +23,8 @@ export declare class CafeController {
         _count: {
             order: number;
         };
-        sort: number;
         slug: string;
+        sort: number;
         address: string;
     }[]>;
     getBySlug(slug: string): Promise<{
@@ -47,8 +47,8 @@ export declare class CafeController {
         _count: {
             order: number;
         };
-        sort: number;
         slug: string;
+        sort: number;
         address: string;
     }>;
     getById(id: string): Promise<{
@@ -71,8 +71,8 @@ export declare class CafeController {
         _count: {
             order: number;
         };
-        sort: number;
         slug: string;
+        sort: number;
         address: string;
     }>;
     create(): Promise<{

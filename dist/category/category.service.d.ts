@@ -11,9 +11,9 @@ export declare class CategoryService {
         _count: {
             products: number;
         };
+        slug: string;
         image: string;
         sort: number;
-        slug: string;
         products: {
             id: string;
             createdAt: Date;
@@ -27,8 +27,8 @@ export declare class CategoryService {
             price: number;
             image: string;
             sort: number;
-            show: number;
-            recommended: number;
+            show: number | null;
+            recommended: number | null;
             categoryId: string | null;
             userId: string | null;
         }[];
@@ -41,9 +41,9 @@ export declare class CategoryService {
         _count: {
             products: number;
         };
+        slug: string;
         image: string;
         sort: number;
-        slug: string;
         products: {
             id: string;
             createdAt: Date;
@@ -57,8 +57,8 @@ export declare class CategoryService {
             price: number;
             image: string;
             sort: number;
-            show: number;
-            recommended: number;
+            show: number | null;
+            recommended: number | null;
             categoryId: string | null;
             userId: string | null;
         }[];
@@ -71,9 +71,9 @@ export declare class CategoryService {
         _count: {
             products: number;
         };
+        slug: string;
         image: string;
         sort: number;
-        slug: string;
         products: {
             id: string;
             createdAt: Date;
@@ -87,8 +87,8 @@ export declare class CategoryService {
             price: number;
             image: string;
             sort: number;
-            show: number;
-            recommended: number;
+            show: number | null;
+            recommended: number | null;
             categoryId: string | null;
             userId: string | null;
         }[];

@@ -19,6 +19,9 @@ const serve_static_1 = require("@nestjs/serve-static");
 const app_root_path_1 = require("app-root-path");
 const order_module_1 = require("./order/order.module");
 const cafe_module_1 = require("./cafe/cafe.module");
+const actions_module_1 = require("./actions/actions.module");
+const terms_module_1 = require("./terms/terms.module");
+const about_cafe_module_1 = require("./about-cafe/about-cafe.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -35,7 +38,10 @@ exports.AppModule = AppModule = __decorate([
             product_module_1.ProductModule,
             user_module_1.UserModule,
             order_module_1.OrderModule,
-            cafe_module_1.CafeModule
+            cafe_module_1.CafeModule,
+            actions_module_1.ActionsModule,
+            terms_module_1.TermsModule,
+            about_cafe_module_1.AboutCafeModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService]

@@ -23,8 +23,8 @@ export declare class CafeService {
         _count: {
             order: number;
         };
-        sort: number;
         slug: string;
+        sort: number;
         address: string;
     }[]>;
     create(): Promise<{
@@ -56,8 +56,8 @@ export declare class CafeService {
         _count: {
             order: number;
         };
-        sort: number;
         slug: string;
+        sort: number;
         address: string;
     }>;
     bySlug(slug: string): Promise<{
@@ -80,8 +80,8 @@ export declare class CafeService {
         _count: {
             order: number;
         };
-        sort: number;
         slug: string;
+        sort: number;
         address: string;
     }>;
     update(id: string, dto: CafeDto): Promise<{

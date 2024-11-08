@@ -35,17 +35,17 @@ export declare class OrderController {
                     user: number;
                     orderItems: number;
                 };
+                slug: string;
+                image: string;
+                sort: number;
                 description: string;
                 volume: string;
                 unit: string;
-                image: string;
-                categoryId: string;
                 minportion: number;
                 price: number;
-                sort: number;
                 show: number;
                 recommended: number;
-                slug: string;
+                categoryId: string;
                 userId: string;
                 orderItems: {
                     id: string;
@@ -110,17 +110,17 @@ export declare class OrderController {
                     user: number;
                     orderItems: number;
                 };
+                slug: string;
+                image: string;
+                sort: number;
                 description: string;
                 volume: string;
                 unit: string;
-                image: string;
-                categoryId: string;
                 minportion: number;
                 price: number;
-                sort: number;
                 show: number;
                 recommended: number;
-                slug: string;
+                categoryId: string;
                 userId: string;
                 orderItems: {
                     id: string;
