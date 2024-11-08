@@ -3,6 +3,7 @@ export declare class UserDto {
     password: string;
     name: string;
     phone: string;
+    bonuses: number;
 }
 export declare class NameDto {
     name: string;
@@ -12,4 +13,7 @@ export declare class EmailDto {
 }
 export declare class PhoneDto {
     phone: string;
+}
+export declare class BonusesDto {
+    bonuses: number;
 }

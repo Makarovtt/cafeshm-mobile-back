@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderDto = exports.OrderItemDto = void 0;
+exports.OrderDto = exports.OrderTimeOrder = exports.OrderDeliveryAdressDto = exports.OrderItemDto = void 0;
 const class_validator_1 = require("class-validator");
 class OrderItemDto {
 }
@@ -26,6 +26,12 @@ __decorate([
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], OrderItemDto.prototype, "quantity", void 0);
+class OrderDeliveryAdressDto {
+}
+exports.OrderDeliveryAdressDto = OrderDeliveryAdressDto;
+class OrderTimeOrder {
+}
+exports.OrderTimeOrder = OrderTimeOrder;
 class OrderDto {
 }
 exports.OrderDto = OrderDto;
@@ -33,4 +39,36 @@ __decorate([
     (0, class_validator_1.IsArray)(),
     __metadata("design:type", Array)
 ], OrderDto.prototype, "items", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], OrderDto.prototype, "total", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], OrderDto.prototype, "totalBonus", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], OrderDto.prototype, "addBonus", void 0);
+__decorate([
+    (0, class_validator_1.IsBoolean)(),
+    __metadata("design:type", Boolean)
+], OrderDto.prototype, "isBonus", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], OrderDto.prototype, "receiving", void 0);
+__decorate([
+    (0, class_validator_1.IsObject)(),
+    __metadata("design:type", OrderTimeOrder)
+], OrderDto.prototype, "timeready", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], OrderDto.prototype, "cafeId", void 0);
+__decorate([
+    (0, class_validator_1.IsObject)(),
+    __metadata("design:type", OrderDeliveryAdressDto)
+], OrderDto.prototype, "userInfo", void 0);
 //# sourceMappingURL=order.dto.js.map

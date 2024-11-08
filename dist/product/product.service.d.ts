@@ -15,6 +15,7 @@ export declare class ProductService {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;
@@ -34,17 +35,17 @@ export declare class ProductService {
             user: number;
             orderItems: number;
         };
+        slug: string;
+        image: string;
+        sort: number;
         description: string;
         volume: string;
         unit: string;
-        image: string;
-        categoryId: string;
         minportion: number;
         price: number;
-        sort: number;
         show: number;
         recommended: number;
-        slug: string;
+        categoryId: string;
         userId: string;
         orderItems: {
             id: string;
@@ -66,6 +67,7 @@ export declare class ProductService {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;
@@ -85,17 +87,17 @@ export declare class ProductService {
             user: number;
             orderItems: number;
         };
+        slug: string;
+        image: string;
+        sort: number;
         description: string;
         volume: string;
         unit: string;
-        image: string;
-        categoryId: string;
         minportion: number;
         price: number;
-        sort: number;
         show: number;
         recommended: number;
-        slug: string;
+        categoryId: string;
         userId: string;
         orderItems: {
             id: string;
@@ -117,6 +119,7 @@ export declare class ProductService {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;
@@ -136,17 +139,17 @@ export declare class ProductService {
             user: number;
             orderItems: number;
         };
+        slug: string;
+        image: string;
+        sort: number;
         description: string;
         volume: string;
         unit: string;
-        image: string;
-        categoryId: string;
         minportion: number;
         price: number;
-        sort: number;
         show: number;
         recommended: number;
-        slug: string;
+        categoryId: string;
         userId: string;
         orderItems: {
             id: string;
@@ -168,6 +171,7 @@ export declare class ProductService {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;
@@ -187,17 +191,17 @@ export declare class ProductService {
             user: number;
             orderItems: number;
         };
+        slug: string;
+        image: string;
+        sort: number;
         description: string;
         volume: string;
         unit: string;
-        image: string;
-        categoryId: string;
         minportion: number;
         price: number;
-        sort: number;
         show: number;
         recommended: number;
-        slug: string;
+        categoryId: string;
         userId: string;
         orderItems: {
             id: string;
@@ -219,6 +223,7 @@ export declare class ProductService {
             name: string | null;
             avatarPath: string;
             phone: string;
+            bonuses: number;
         };
         category: {
             id: string;
@@ -238,17 +243,17 @@ export declare class ProductService {
             user: number;
             orderItems: number;
         };
+        slug: string;
+        image: string;
+        sort: number;
         description: string;
         volume: string;
         unit: string;
-        image: string;
-        categoryId: string;
         minportion: number;
         price: number;
-        sort: number;
         show: number;
         recommended: number;
-        slug: string;
+        categoryId: string;
         userId: string;
         orderItems: {
             id: string;
@@ -273,8 +278,8 @@ export declare class ProductService {
         price: number;
         image: string;
         sort: number;
-        show: number;
-        recommended: number;
+        show: number | null;
+        recommended: number | null;
         categoryId: string | null;
         userId: string | null;
     }>;
@@ -291,8 +296,8 @@ export declare class ProductService {
         price: number;
         image: string;
         sort: number;
-        show: number;
-        recommended: number;
+        show: number | null;
+        recommended: number | null;
         categoryId: string | null;
         userId: string | null;
     }>;
@@ -309,8 +314,8 @@ export declare class ProductService {
         price: number;
         image: string;
         sort: number;
-        show: number;
-        recommended: number;
+        show: number | null;
+        recommended: number | null;
         categoryId: string | null;
         userId: string | null;
     }>;
